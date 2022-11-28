@@ -1,0 +1,166 @@
+body {
+
+    background-color:#EFEFEF;
+    
+    
+    }
+
+#calculated-map {
+
+    font-size: 12px;
+    font-family:Tahoma;
+}
+
+#m2 {
+
+    font-family: Tahoma;
+    font-size: 10px;
+}
+
+
+.form-label{
+    margin-left:1%;
+    margin-right:auto;
+    margin-top:auto;
+    margin-bottom:30px;
+    padding:5px;
+    width:30%;
+ 
+}
+
+.form{
+    
+    margin-left:1%;
+    margin-right:auto;
+    display:block;
+    margin-top:2%;
+    margin-bottom:1%;
+    border-radius: 10px;
+    font-size:17px;
+    padding:5px;
+    width:34%;
+    border:0.0001%;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    border-radius: 10px;
+  
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 40px;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+  
+    background-color: #04AA6D;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  
+  }
+  
+  #calculate{
+  
+  color: #1C7628;
+  border-color:#BFC6C0;
+  background-color:white;
+  margin-left:25%;
+  margin-right:auto;
+  display:block;
+  margin-top:auto;
+  margin-bottom:1%;
+  border-radius: 10px;
+  font-size:20px;
+  padding:5px;
+  width:auto;
+  border:0.0001%;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  }
+  
+  #quote {
+  
+  color: green;
+ 
+  border-color:#CDE3C0;
+  margin-left:20%;
+  margin-right:auto;
+  
+  margin-top:auto;
+  margin-bottom:0%;
+  font-size:40px;
+  padding:5px;
+  width:auto;
+  border:0.0001%;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  border-radius: 10px;
+  
+  
+  
+  }
+  
+
+  
+  .h2 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 2%;
+  }
+ 
+  
+  
+  
+  .results {
+    position: absolute;
+    bottom: 305px;
+    right: 25%;
+    width: 500px;
+    height: 305px;
+    display: block;
+    border-radius: 12px;
+    border: #d5570d;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+
+  }
+  .result{
+    margin-left:4%;
+ 
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  
+    font-size: 13px;
+  
+  
+  }
+ 
+  
+  .form-input{
+    margin-left:2%;
+    margin-right:50%;
+    margin-top:0.5%;
+    padding:5px;
+    width:auto;
+    border:0;
+    border-color:white;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:5px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  
+  
+  }
+
+  .guide {
+
+    font-style: italic;
+    margin-left: 2%;
+  }
+  
