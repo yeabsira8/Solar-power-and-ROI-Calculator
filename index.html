@@ -177,7 +177,10 @@ function showResult() {
   
   
 var area1=document.myForm.area.value;
-
+if (area1==null || area1==""){
+alert("please type your rooftop area");
+return false;
+}
 
 
 var area1=document.myForm.bill.value;
