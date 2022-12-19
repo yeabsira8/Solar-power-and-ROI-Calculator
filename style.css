@@ -5,11 +5,6 @@ body {
     
     }
 
-#calculated-map {
-
-    font-size: 12px;
-    font-family:Tahoma;
-}
 
 #m2 {
 
@@ -19,6 +14,7 @@ body {
 
 
 .form-label{
+    position: relative;
     margin-left:1%;
     margin-right:auto;
     margin-top:auto;
@@ -29,7 +25,7 @@ body {
 }
 
 .form{
-    
+    position: relative;
     margin-left:1%;
     margin-right:auto;
     display:block;
@@ -38,7 +34,6 @@ body {
     border-radius: 10px;
     font-size:17px;
     padding:5px;
-    width:34%;
     border:0.0001%;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 
@@ -121,19 +116,20 @@ body {
   
   
   .results {
-    position: absolute;
-    bottom: 305px;
-    right: 25%;
+    position: relative;
+    bottom: 260px;
+    float: right;
+    margin-right: 2%;
     width: 500px;
     height: 305px;
-    display: none;
+    display: block;
     border-radius: 12px;
     border: #d5570d;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 
   }
   .result{
-    margin-left:4%;
+    margin-right:3%;
  
     font-family:Verdana, Geneva, Tahoma, sans-serif;
   
@@ -143,12 +139,26 @@ body {
   }
  
   
-  .form-input{
+  .form-input1{
     margin-left:2%;
     margin-right:50%;
     margin-top:0.5%;
     padding:5px;
-    width:auto;
+    width:32%;
+    border:0;
+    border-color:white;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:5px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  
+  }
+
+  .form-input2{
+    margin-left:2%;
+    margin-right:50%;
+    margin-top:0.5%;
+    padding:5px;
+    width:54%;
     border:0;
     border-color:white;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
@@ -158,9 +168,17 @@ body {
   
   }
 
+
   .guide {
 
     font-style: italic;
     margin-left: 2%;
   }
   
+  .mapboxgl-map{
+
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+
+  }
