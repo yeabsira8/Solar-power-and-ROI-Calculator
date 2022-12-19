@@ -6,6 +6,7 @@
 <title>Solar power and ROI calculator</title>
 <link rel="icon" href="https://yeabsira8.github.io/solar-power-calculator/dynamic logo1.png">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
 <script src="https://yeabsira8.github.io/Solar-power-and-ROI-Calculator/function.js"> </script>
@@ -84,7 +85,7 @@
       <input type="number" min="10" maxlength="3" class="form-input1" name="area" placeholder="Type your area (m2)" id="area"><br>
       <br>
       <label class="form-label">Please enter your annual electricity consumption: </label>
-        <input type="number" class="form-input2" name="bill" placeholder="Type your annual consumption (kWh) " id="bill">
+        <input type="number" class="form-input2" name="consumption" placeholder="Type your annual consumption (kWh) " id="consumption">
       <br>
       <br>
       <input class="button" id="calculate" value="calculate" type="button" onclick="showResult()">
@@ -191,21 +192,19 @@ showUserHeading: true
 );
 
 
-
-
-
 function showResult() {
-
-  
   
 var area1=document.myForm.area.value;
 
+if (area1==null || area1==""){
+alert("please type your rooftop area");
+return false;
+}
 
-
-var area1=document.myForm.bill.value;
+var area1=document.myForm.consumption.value;
 
 if (area1==null || area1==""){
-alert("please type your bill");
+alert("please type your annual consumption");
 return false;
 }
 
@@ -216,26 +215,25 @@ var PR = 0.75;
 var area222 = document.getElementById("area").value;
 var area201 = (area222*0.75);
 var panels = Math.round((area201)/1.64);
-var bill = document.getElementById("bill").value;
-var panel1 = (bill/365);
+var consumption1 = document.getElementById("consumption").value;
+var panel1 = (consumption1/365);
 var panel2 = (panel1*1.44);
 var panel3 = Math.ceil(((panel2/2.7)*1000));
 var panel4 = (panel3/300);
 Number_of_panels_needed.innerHTML=Math.ceil(panel4);
 required_area.innerHTML=Math.ceil(panel4*1.64)+ " m2";
 
-
 capacity.innerHTML= Math.round(panel4*295/1000)+ " kW";
 
-var bill = document.getElementById("bill").value;
+var consumption1 = document.getElementById("consumption").value;
 generation.innerHTML= Math.round(panel4*1.64*panel_efficiency*H*PR/1000)+ " MWh";
-var bill = (bill*0.25)/12
-var savings = Math.round(bill*12);
+var consumption2 = (consumption1*0.30)/12 ;
+var savings = Math.round((consumption2*12));
 var parts = savings.toString().split(".");
 var num = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (parts[1] ? "." + parts[1] : "");
 saving.innerHTML=num + " €";
 
-var costs = ((panel4*295)*1.5);
+var costs = ((panel4*300)*1.5);
 
 payoff.innerHTML = Math.round(costs / savings) + " years";
 var cost = Math.round(costs);
@@ -264,9 +262,6 @@ var x = document.getElementById("answers22");
     x.style.display = "block";
 
 }
-
-
-
 
 </script>
 
