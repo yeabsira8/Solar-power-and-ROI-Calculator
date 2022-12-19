@@ -192,10 +192,7 @@ function showResult() {
   
   
 var area1=document.myForm.area.value;
-if (area1==null || area1==""){
-alert("please type your rooftop area");
-return false;
-}
+
 
 
 var area1=document.myForm.bill.value;
@@ -212,20 +209,26 @@ var PR = 0.75;
 var area222 = document.getElementById("area").value;
 var area201 = (area222*0.75);
 var panels = Math.round((area201)/1.64);
+var bill = document.getElementById("bill").value;
+var panel1 = (bill/365);
+var panel2 = (panel1*1.44);
+var panel3 = Math.ceil(((panel2/2.7)*1000));
+var panel4 = (panel3/300);
+Number_of_panels_needed.innerHTML=Math.ceil(panel4);
+required_area.innerHTML=Math.ceil(panel4*1.64)+ " m2";
 
-Number_of_panels_needed.innerHTML=Math.round((area201)/1.64);
 
-capacity.innerHTML= Math.round(panels*295/1000)+ " kW";
+capacity.innerHTML= Math.round(panel4*295/1000)+ " kW";
 
 var bill = document.getElementById("bill").value;
-generation.innerHTML= Math.round(area201*panel_efficiency*H*PR/1000)+ " MWh";
+generation.innerHTML= Math.round(panel4*1.64*panel_efficiency*H*PR/1000)+ " MWh";
+var bill = (bill*0.25)/12
 var savings = Math.round(bill*12);
 var parts = savings.toString().split(".");
 var num = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (parts[1] ? "." + parts[1] : "");
 saving.innerHTML=num + " €";
 
-var savings = (bill*12);
-var costs = ((panels*295)*2);
+var costs = ((panel4*295)*1.5);
 
 payoff.innerHTML = Math.round(costs / savings) + " years";
 var cost = Math.round(costs);
@@ -243,8 +246,9 @@ if (area201<required_area1){
 }
 
 
+/*
 ROI.innerHTML = Math.round((((25*savings)-costs)/costs)*100)+ " % over lifetime";
-
+*/
 var quote1 = "Get Solar Quote";
 
 quote.innerHTML = quote1;
