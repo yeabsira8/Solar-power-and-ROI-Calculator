@@ -119,10 +119,18 @@ mapboxgl.accessToken = 'pk.eyJ1IjoieWVhYnNpcmEtOCIsImEiOiJjbGF3bzVzb3EwOTRpM3FwN
 const map = new mapboxgl.Map({
 container: 'map', // container ID
 // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-style: 'mapbox://styles/mapbox/satellite-v9', // style URL
-center: [-91.874, 42.76], // starting position [lng, lat]
+style: 'mapbox://styles/mapbox/streets-v12', // style URL
+center: [4.897070, 52.377956], // starting position [lng, lat]
 zoom: 12 // starting zoom
 });
+  
+// Add the control to the map.
+map.addControl(
+new MapboxGeocoder({
+accessToken: mapboxgl.accessToken,
+mapboxgl: mapboxgl
+})
+);
  
 const draw = new MapboxDraw({
 displayControlsDefault: false,
