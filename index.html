@@ -31,6 +31,12 @@
 
 </div>
 <body>
+
+<!-- Load the `mapbox-gl-geocoder` plugin. -->
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+  
+<style>
 <style>
 
 #calculated-area {
@@ -226,6 +232,16 @@ var cost = Math.round(costs);
 var parts = cost.toString().split(".");
 var num1 = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (parts[1] ? "." + parts[1] : "");
 e_cost.innerHTML = num1 + " €";
+
+var required_area1 = Math.ceil(panel4*1.64);
+
+if (area201<required_area1){
+  var x = document.getElementById("answers22");
+  x.style.display = "none";
+  alert("The required area for the solar power system is more than your available rooftop area");
+  return false;
+}
+
 
 ROI.innerHTML = Math.round((((25*savings)-costs)/costs)*100)+ " % over lifetime";
 
