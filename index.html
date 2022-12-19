@@ -12,17 +12,17 @@
 <link rel="stylesheet" href="style.css">
 <style>
 
-
-
 #map {   
-  position: absolute;
-  bottom: 60px;
-  left: 1.5%;
+  position: relative;
+  bottom: 2px;
+  float: left;
+  margin-left: 1%;
   width: 500px;
   height: 300px;
   display: block;
   border-radius: 12px;
    }
+  
 </style>
 </head>
 <script type="text/javascript" src="https://yeabsira8.github.io/Solar-power-and-ROI-Calculator/function.js"></script>
@@ -81,10 +81,10 @@
         <label class="form-label"> Please enter your rooftop area: </label>
         <br>
         <p class="guide"> (Please use the map tool below if you don't know your rooftop area)</p>
-      <input type="number" min="10" maxlength="3" class="form-input" name="area" placeholder="Type your area (m2)" id="area"><br>
+      <input type="number" min="10" maxlength="3" class="form-input1" name="area" placeholder="Type your area (m2)" id="area"><br>
       <br>
       <label class="form-label">Please enter your annual electricity consumption: </label>
-        <input type="number" class="form-input" name="annual" placeholder="Type your annual cosumption (kWh) " id="annual">
+        <input type="number" class="form-input2" name="annual" placeholder="Type your annual cosumption (kWh) " id="annual">
       <br>
       <br>
       <input class="button" id="calculate" value="calculate" type="button" onclick="showResult()">
