@@ -22,21 +22,20 @@
   display: block;
   border-radius: 12px;
    }
-  
 </style>
 </head>
-<script type="text/javascript" src="https://yeabsira8.github.io/Solar-power-and-ROI-Calculator/function.js"></script>
+<script type="text/javascript" src="https://yeabsira8.github.io/solar-power-calculator/js/scratch_14.js"></script>
 <div class="topnav">
   <a class="active" id="home">Solar Power calculator</a>
 
 </div>
 <body>
 
-<!-- Load the `mapbox-gl-geocoder` plugin. -->
+  <!-- Load the `mapbox-gl-geocoder` plugin. -->
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
-  
 <style>
+
 #calculated-area {
 
   color:black;
@@ -69,6 +68,7 @@
   display: inline-block;
   width: 40%;
 }
+
     
 </style>
 
@@ -84,7 +84,7 @@
       <input type="number" min="10" maxlength="3" class="form-input1" name="area" placeholder="Type your area (m2)" id="area"><br>
       <br>
       <label class="form-label">Please enter your annual electricity consumption: </label>
-        <input type="number" class="form-input2" name="annual" placeholder="Type your annual cosumption (kWh) " id="annual">
+        <input type="number" class="form-input2" name="bill" placeholder="Type your annual consumption (kWh) " id="bill">
       <br>
       <br>
       <input class="button" id="calculate" value="calculate" type="button" onclick="showResult()">
@@ -96,6 +96,7 @@
      <h2 class="h2"> <strong> Results </strong></h2>
      <div class="ans1">
        <p class="result">Number of panels: <strong style="color: green" id="Number_of_panels_needed"></strong> </p>
+       <p class="result">Required area: <strong style="color: green" id="required_area"></strong> </p>
        <p class="result"> Solar Capacity: <strong style="color: green" id="capacity"></strong> </p>
        <p class="result"> Estimated Annual solar power generation: <strong style="color: green" id="generation"></strong> </p>
        <p class="result"> Estimated Total cost: <strong style="color: green" id="e_cost"></strong>  </p>
@@ -105,7 +106,9 @@
      <div class="ans">
        <p class="result"> Annual savings: <strong style="color: green" id="saving"></strong></p>
        <p class="result"> Payoff Period: <strong style="color: green" id="payoff"></strong> </p>
+       <!--
        <p class="result"> ROI: <strong style="color: green" id="ROI"></strong>  </p>
+       -->
        <br>
      
     </div>
@@ -129,9 +132,9 @@ container: 'map', // container ID
 // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
 style: 'mapbox://styles/mapbox/streets-v12', // style URL
 center: [4.897070, 52.377956], // starting position [lng, lat]
-zoom: 12 // starting zoom
+zoom: 14 // starting zoom
 });
-  
+ 
 // Add the control to the map.
 map.addControl(
 new MapboxGeocoder({
@@ -139,7 +142,7 @@ accessToken: mapboxgl.accessToken,
 mapboxgl: mapboxgl
 })
 );
- 
+
 const draw = new MapboxDraw({
 displayControlsDefault: false,
 // Select which mapbox-gl-draw control buttons to add to the map.
@@ -186,6 +189,8 @@ trackUserLocation: true,
 showUserHeading: true
 })
 );
+
+
 
 
 
@@ -259,6 +264,8 @@ var x = document.getElementById("answers22");
     x.style.display = "block";
 
 }
+
+
 
 
 </script>
