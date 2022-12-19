@@ -37,8 +37,6 @@
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
   
 <style>
-<style>
-
 #calculated-area {
 
   color:black;
@@ -49,16 +47,16 @@
 
 
     .calculation-box {
-        height: 40px;
+        height: auto;
         width: 130px;
         position: absolute;
-        bottom: 280px;
-        left: 2%;
+        bottom: auto;
+        left: 1.5%;
         background-color: rgba(255, 255, 255, 0.9);
         padding: 15px;
         text-align: center;
         border-radius: 12px;
-        background-color: #EFEFEF;
+        background-color: #eaf1ec;
     }
 
     p {
@@ -67,6 +65,10 @@
         font-size: 13px;
     }
 
+    .form, .results {
+  display: inline-block;
+  width: 40%;
+}
     
 </style>
 
@@ -81,7 +83,7 @@
         <p class="guide"> (Please use the map tool below if you don't know your rooftop area)</p>
       <input type="number" min="10" maxlength="3" class="form-input" name="area" placeholder="Type your area (m2)" id="area"><br>
       <br>
-      <label class="form-label">Please enter your <strong>annual</strong> electricity consumption: </label>
+      <label class="form-label">Please enter your annual electricity consumption: </label>
         <input type="number" class="form-input" name="annual" placeholder="Type your annual cosumption (kWh) " id="annual">
       <br>
       <br>
