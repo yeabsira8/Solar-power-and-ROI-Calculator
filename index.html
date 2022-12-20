@@ -97,7 +97,7 @@
      <h2 class="h2"> <strong> Results </strong></h2>
      <div class="ans1">
        <p class="result">Number of panels: <strong style="color: green" id="Number_of_panels_needed"></strong> </p>
-       <p class="result">Required area: <strong style="color: green" id="required_area" id="required_area2"></strong> </p>
+       <p class="result">Required area: <strong style="color: green" id="required_area"></strong> </p>
        <p class="result"> Solar Capacity: <strong style="color: green" id="capacity"></strong> </p>
        <p class="result"> Estimated Annual solar power generation: <strong style="color: green" id="generation"></strong> </p>
        <p class="result"> Estimated Total cost: <strong style="color: green" id="e_cost"></strong>  </p>
@@ -213,7 +213,7 @@ var panel_efficiency = 0.18;
 var H = 1000;
 var PR = 0.75;
 var area222 = document.getElementById("area").value;
-var area201 = (area222*0.75);
+var area201 = (area222*1);
 var panels = Math.round((area201)/1.64);
 var consumption1 = document.getElementById("consumption").value;
 var panel1 = (consumption1/365);
@@ -245,8 +245,11 @@ var required_area1 = Math.ceil(panel4*1.64);
 
 if (area201<required_area1){
   var x = document.getElementById("required_area2");
-  x.innerHTML = "The available rooftop area is below the required area to installed the solar system";
+  x.style.display = "block";
+  alert("The required area for the solar power system is more than your available rooftop area");
+  return false;
 }
+
 
 
 /*
