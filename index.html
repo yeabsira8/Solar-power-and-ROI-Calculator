@@ -245,11 +245,15 @@ var required_area1 = Math.ceil(panel4*1.64);
 
 if (area201<required_area1){
   var x = document.getElementById("required_area2");
-  alert("The required area for the solar power system is more than your available rooftop area");
-  return false;
+  x.innerHTML= "The required area for the solar power system is more than your available rooftop area";
+  x.style.display = "block";
+} 
+
+if (area201>required_area1){
+  var x = document.getElementById("required_area2");
+  x.innerHTML= "The required area for the solar power system is more than your available rooftop area";
+  x.style.display = "none";
 }
-
-
 
 /*
 ROI.innerHTML = Math.round((((25*savings)-costs)/costs)*100)+ " % over lifetime";
